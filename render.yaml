@@ -1,0 +1,43 @@
+services:
+  # Serviço 1: Dashboard Web (Next.js)
+  - type: web
+    name: telegram-bot-dashboard
+    env: node
+    buildCommand: bun install && bun run build
+    startCommand: bun run start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: telegram-bot-db
+          property: connectionString
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: API_BASE_URL
+        value: https://telegram-bot-dashboard.onrender.com/api
+      - key: NODE_ENV
+        value: production
+
+  # Serviço 2: Bot Telegram
+  - type: worker
+    name: telegram-bot-worker
+    env: node
+    runtime: bun
+    buildCommand: cd mini-services/telegram-bot && bun install
+    startCommand: cd mini-services/telegram-bot && bun run start
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: API_BASE_URL
+        value: https://telegram-bot-dashboard.onrender.com/api
+      - key: NODE_ENV
+        value: production
+
+databases:
+  # Banco de dados PostgreSQL para produção
+  - name: telegram-bot-db
+    databaseName: telegram_bot
+    user: telegram_bot_user

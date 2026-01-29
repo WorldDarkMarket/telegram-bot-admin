@@ -1,0 +1,16 @@
+{
+  "name": "telegram-bot-service",
+  "version": "1.0.0",
+  "description": "Telegram Bot Service for E-commerce",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "start": "bun index.ts"
+  },
+  "dependencies": {
+    "grammy": "^1.21.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
