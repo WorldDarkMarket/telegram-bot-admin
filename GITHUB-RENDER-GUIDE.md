@@ -17,7 +17,7 @@ git commit -m "feat: Initial commit - Telegram Bot Admin with Next.js and Grammy
 # Criar repositório no GitHub: https://github.com/new
 
 # Adicionar remote e fazer push
-git remote add origin https://github.com/SEU_USUARIO/telegram-bot-admin.git
+git remote add origin https://github.com/WorldDarkMarket/telegram-bot-admin.git
 git branch -M main
 git push -u origin main
 ```
