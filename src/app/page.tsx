@@ -265,7 +265,7 @@ export default function DashboardPage() {
             {/* Welcome Card */}
             <Card className="border-slate-200 dark:border-slate-800">
               <CardHeader>
-                <CardTitle className="text-xl">Bem-vindo ao Telegram Bot Admin!</Card1>
+                <CardTitle className="text-xl">Bem-vindo ao Telegram Bot Admin!</CardTitle>
                 <CardDescription>
                   Gerencie seu bot Telegram de forma profissional e eficiente
                 </CardDescription>
